@@ -1,0 +1,12 @@
+package com.jnkvv.arrays;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Arrays a = new Arrays();
+		int[] x = a.arr;
+
+	}
+
+}
