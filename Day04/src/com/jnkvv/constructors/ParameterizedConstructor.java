@@ -7,12 +7,12 @@ public class ParameterizedConstructor {
 	String field3;
 
 	//default constructor
-//	public ParameterizedConstructor() {
-//		System.out.println("def ctor is called");
-//		this.field1 = 10;
-//		this.field2 = 20;
-//		this.field3 = "Suraj";
-//	}
+	public ParameterizedConstructor() {
+		System.out.println("def ctor is called");
+		this.field1 = 10;
+		this.field2 = 20;
+		this.field3 = "Suraj";
+	}
 	
 	public ParameterizedConstructor(int field1, int field2, String field3) {
 		System.out.println("para ctor is called");
