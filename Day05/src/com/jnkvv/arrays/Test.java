@@ -54,6 +54,25 @@ public class Test {
 		
 		empArr1[0] = new Employee();
 		
+		ListNode head = new ListNode(1);
+		ListNode a = new ListNode(2);
+		ListNode b = new ListNode(3);
+		ListNode c = new ListNode(4);
+		ListNode d = new ListNode(5);
+		ListNode e = new ListNode(6);
+		ListNode f = new ListNode(7);
+		head.next = a;
+		a.next = b;
+		b.next = c;
+		c.next = d;
+		d.next = e;
+		e.next = f;
+		head.display(head);
+		Solution sol = new Solution();
+		sol.swapPairs(head);
+		System.err.println("*************************************");
+		head.display(head);
+		
 		
 		
 		
