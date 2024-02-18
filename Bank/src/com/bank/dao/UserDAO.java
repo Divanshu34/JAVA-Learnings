@@ -20,36 +20,51 @@ public class UserDAO {
 //		users[3] = u4;
 //	}
 
-	public static User[] users = { 
-			new User(1, "Divanshu", "Jain", 1234, "987654321", 5000.69),
-			new User(2, "Ashish", "Jain", 1234, "123456789", 10000.69),
-			new User(3, "Dev", "Jain", 1234, "365756935", 2357.69),
-			new User(4, "Suraj", "Raghuwanshi", 1234, "537547461", 67890.69) 
-	};
+//	public static User[] users = { 
+//			new User(1, "Divanshu", "Jain", 1234, "987654321", 5000.69),
+//			new User(2, "Ashish", "Jain", 1234, "123456789", 10000.69),
+//			new User(3, "Dev", "Jain", 1234, "365756935", 2357.69),
+//			new User(4, "Suraj", "Raghuwanshi", 1234, "537547461", 67890.69) 
+//	};
 	
-	public boolean verifyCardNumber(String cardNo) {
-		//cardNo = 537547461
-		for(int i = 0; i < users.length; i++) {
-			if(users[i].getCardNo().equals(cardNo)) {
-				User user = users[i];
-				return true;
-			}
-		}
-		return false;
+	public static List<User> users = new ArrayList<>();
+	//static initialiser block
+	static {
+		users.add(new User(1, "Divanshu", "Jain", 1234, "987654321", 5000.69));
+		users.add(new User(2, "Ashish", "Jain", 1234, "123456789", 10000.69));
+		users.add(new User(3, "Dev", "Jain", 1234, "365756935", 2357.69));
+		users.add(new User(4, "Suraj", "Raghuwanshi", 1234, "537547461", 67890.69));
 	}
 	
-	public User findByCardNoAndPin(String cardNo, int pin) {
+	public User verifyCardNumber(String cardNo) {
+		//cardNo = 537547461
 		User user = null;
-		
-		for(int i = 0; i < users.length; i++) {
-			if(users[i].getCardNo().equals(cardNo) && users[i].getPin() == pin) {
-				user = users[i];
+		for(int i = 0; i < users.size(); i++) {
+			if(users.get(i).getCardNo().equals(cardNo)) {
+				user = users.get(i);
 				return user;
-//				break;
 			}
 		}
-		
 		return user;
+	}
+	
+	public User findByCardNoAndPin(String cardNo, int pin, User user) {
+//		User user = null;
+		if(user.getCardNo().equals(cardNo) && user.getPin() == pin) {
+			return user;
+		}
+		user = null;
+		return user;
+		
+//		for(int i = 0; i < users.size(); i++) {
+//			if(users.get(i).getCardNo().equals(cardNo) && users.get(i).getPin() == pin) {
+//				user = users.get(i);
+//				return user;
+////				break;
+//			}
+//		}
+		
+//		return user;
 	}
 	
 	

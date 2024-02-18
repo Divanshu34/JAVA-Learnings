@@ -16,13 +16,13 @@ public class Run {
 		System.out.println("---------*********---------");
 		System.out.println("Please enter your card number below");
 		String cardNo = s.next();
-		boolean isCardNoPresent = userDAO.verifyCardNumber(cardNo);
+		User user = userDAO.verifyCardNumber(cardNo);
 		
-		while(isCardNoPresent == false) {
+		while(user == null) {
 			System.out.println("Wrong credentials!!!\n"
 					+ "Re-enter your card number!!!");
 			cardNo = s.next();
-			isCardNoPresent =  userDAO.verifyCardNumber(cardNo);	
+			user =  userDAO.verifyCardNumber(cardNo);	
 		}
 		
 //		for(;isCardNoPresent == false;) {
@@ -37,8 +37,7 @@ public class Run {
 		//if isCardNoPresent == true
 		System.out.println("Please enter your 4-digit pin");
 		int pin = s.nextInt();
-		User user = userDAO.findByCardNoAndPin(cardNo, pin);
-		
+		user = userDAO.findByCardNoAndPin(cardNo, pin, user);
 		
 		
 		
