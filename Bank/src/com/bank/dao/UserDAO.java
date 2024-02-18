@@ -28,12 +28,28 @@ public class UserDAO {
 	};
 	
 	public boolean verifyCardNumber(String cardNo) {
+		//cardNo = 537547461
 		for(int i = 0; i < users.length; i++) {
 			if(users[i].getCardNo().equals(cardNo)) {
+				User user = users[i];
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	public User findByCardNoAndPin(String cardNo, int pin) {
+		User user = null;
+		
+		for(int i = 0; i < users.length; i++) {
+			if(users[i].getCardNo().equals(cardNo) && users[i].getPin() == pin) {
+				user = users[i];
+				return user;
+//				break;
+			}
+		}
+		
+		return user;
 	}
 	
 	
